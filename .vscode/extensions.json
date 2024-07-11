@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-toolsai.jupyter",
+    "ms-toolsai.jupyter-keymap",
+    "ms-toolsai.jupyter-renderers",
+    "batisteo.vscode-django",
+    "wholroyd.jinja",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "ecmel.vscode-html-css",
+    "ritwickdey.liveserver",
+    "xabikos.javascriptsnippets",
+    "ms-vscode.vscode-typescript-next",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "pkief.material-icon-theme",
+    "formulahendry.code-runner",
+    "ms-python.vscode",
+    "catppuccin.catppuccin-vsc",
+    "dez64ru.macos-modern-theme"
+  ]
+}

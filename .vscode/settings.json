@@ -1,0 +1,37 @@
+{
+  "workbench.preferredDarkColorTheme": "Default Dark+",
+  "task.allowAutomaticTasks": "on",
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor",
+    "*.sqlite3": "default",
+    "*.html": "default"
+  },
+  "editor.fontSize": 15,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "cascadia code",
+  "zenMode.centerLayout": true,
+  "zenMode.fullScreen": true,
+  "zenMode.hideActivityBar": true,
+  "zenMode.hideLineNumbers": true,
+  "zenMode.hideStatusBar": true,
+  "window.autoDetectColorScheme": false,
+  "window.commandCenter": true,
+  "outline.icons": true,
+  "editor.fontWeight": "600",
+  "notebook.cellFocusIndicator": "border",
+  "notebook.cellToolbarVisibility": "hover",
+  "notebook.compactView": true,
+  "notebook.consolidatedOutputButton": true,
+  "notebook.consolidatedRunButton": true,
+  "notebook.diff.enablePreview": true,
+  "notebook.editorOptionsCustomizations": {
+  
+  },
+  "notebook.globalToolbar": true,
+  "notebook.globalToolbarShowLabel": "never",
+  "notebook.insertToolbarLocation": "both",
+  "notebook.markup.fontSize": 0,
+  "notebook.output.textLineLimit": 100,
+  "notebook.showFoldingControls": "always",
+  "html.format.templating": true,
+}
