@@ -73,3 +73,17 @@ class User(AbstractBaseUser):
     def is_staff(self):
         return self.is_admin
         
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to = "accounts/images", default="accounts/images/default_profile.jpg", null = True, blank = True)
+    
+    def __str__(self):
+        return f"{self.user.name}'s Profile"
+    
+CHOICES = [
+              ("SSC" , "SSC"),
+              ("HSC", "HSC"),
+              ("Graduation", "Graduation"),
+              ("Post Graduation", "Post Graduation")
+          ]
+    

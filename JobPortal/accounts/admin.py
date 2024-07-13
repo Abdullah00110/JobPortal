@@ -30,4 +30,11 @@ class UserModelAdmin(UserAdmin):
     
     
 admin.site.register(User, UserModelAdmin)
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin) :
+    list_display = ["user_name", "image"]
+
+    def user_name(self, obj):
+        return obj.user.name if obj.user.name else ''
     
