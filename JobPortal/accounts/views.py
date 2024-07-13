@@ -80,3 +80,60 @@ class Profile(APIView):
                  status = status.HTTP_200_OK
              )
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
+class ChangePassword(APIView):
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
+        serializer = ChangePasswordSerializer(data=request.data, context={"user" : request.user} )
+        if serializer.is_valid():
+            return Response(
+                {
+                    "Message" : "Password Changed Successfully"
+                },
+                status = status.HTTP_200_OK
+            )
+        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
+class PasswordResetEmail(APIView) :
+    def post(self, request) :
+        serializer = PasswordResetEmailSerializer(data=request.data)
+        if serializer.is_valid() :
+            return Response(
+                                {
+                                    "Message" : "Password reset link send to your email. Please check your email"
+                                }, 
+                                status=status.HTTP_200_OK
+                            )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class ResetPassword(APIView) :
+    def post(self, request, uid, token) :
+        serializer = PasswordResetSerializer(data=request.data, context={"uid" : uid, "token" : token})
+        if serializer.is_valid() :
+            return Response(
+                                {
+                                    "Message" : "Password Reset Successfully"
+                                }, 
+                                status=status.HTTP_200_OK
+                            )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class AddEducation(APIView):
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        education = Education.objects.filter(user = request.user)
+        serializer = EducationSerializer(education, many = True)
+        return Response(serializer.data, status = status.HTTP_200_OK)
+    def post(self, request):
+        serializer = EducationSerializer(data = request.data, context = {"user" : request.user})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(
+                {
+                    "Message" : "Education details added successfully"
+                },
+                status = status.HTTP_200_OK
+            )
+        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    

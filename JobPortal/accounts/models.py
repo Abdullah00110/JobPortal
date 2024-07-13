@@ -86,4 +86,12 @@ CHOICES = [
               ("Graduation", "Graduation"),
               ("Post Graduation", "Post Graduation")
           ]
-    
+
+class Education(models.Model):
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    degree = models.CharField(max_length=30, choices = CHOICES, default="Graduation")
+    specialization = models.CharField(max_length=50)
+    institution = models.CharField(max_length = 200)
+    board_or_university = models.CharField(max_length=100)
+    passing_year = models.DateField()
+

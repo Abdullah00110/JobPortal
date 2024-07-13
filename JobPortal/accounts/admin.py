@@ -38,3 +38,11 @@ class ProfileAdmin(admin.ModelAdmin) :
     def user_name(self, obj):
         return obj.user.name if obj.user.name else ''
     
+@admin.register(Education)
+class EducationAdmin(admin.ModelAdmin):
+    list_display = ["user_id", "user_name", "institution" , "degree", "passing_year"]
+    def user_name(self, obj):
+        return obj.user.name if obj.user.name else ''
+    
+    
+    
