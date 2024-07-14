@@ -137,3 +137,20 @@ class AddEducation(APIView):
             )
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
+    
+class AddSkill(APIView) :
+    permission_classes = [IsAuthenticated]
+    def get(self, request) :
+        return Response({"MESSAGE" : "ADD YOUR SKILLS HERE"}, status=status.HTTP_200_OK)
+
+    def post(self, request) :
+        skill = request.data.get("skill").upper()
+        skill = Skills.objects.get_or_create(skill=skill)[0]
+        userskill = UserSkills.objects.get_or_create(user=request.user, skill=skill)[0]
+        serializer = SkillSerializer(userskill)
+        return Response(
+                            {"MESSAGE" : "EDUCATION DETAILS ADDED SUCCESSFULLY", "DATA" : serializer.data},
+                            status=status.HTTP_200_OK
+                        )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    

@@ -118,3 +118,8 @@ class EducationSerializer(serializers.ModelSerializer):
         user = self.context.get("user")
         education = Education.objects.create(user = user, **validated_data)
         return education
+
+class SkillSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserSkills
+        fields = "__all__"

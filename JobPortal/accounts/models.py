@@ -94,4 +94,50 @@ class Education(models.Model):
     institution = models.CharField(max_length = 200)
     board_or_university = models.CharField(max_length=100)
     passing_year = models.DateField()
+    
+    def __str__(self):
+        return f"{self.user.name}'s EDUCATION"
+    
+    
+class Skills(models.Model):
+    skill = models.CharField(max_length = 20)
+    def __str__(self):
+        return self.skill
+    
+
+class UserSkills(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    skill = models.ForeignKey(Skills, on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.user.name}'s Skills"
+
+class Project(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length = 60)
+    role = models.CharField(max_length = 60, default = "")
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.title
+
+class Experience(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    company = models.CharField(max_length = 100)
+    job_role = models.CharField(max_length = 100)
+    start_date = models.DateField()
+    end_date = models.DateField() 
+    experience_year = models.CharField(max_length=50, editable = False)
+    
+    def save(self, *args, **kwargs):
+        if self.start_date and self.end_date:
+            duration = self.end_date - self.start_date
+            years = duration.days // 365 ; months = (duration.days % 365) // 30
+            self.experience_year = f"{years}y {months}m"
+        super().save(*args, **kwargs)
+        
+    def __str__(self):
+        return f"{self.user.name}'s Experience"
+       
+    
+    
 
