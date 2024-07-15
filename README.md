@@ -15,6 +15,16 @@ This project is a Job Portal application developed using Django. It allows users
 
 These instructions will help you set up the project on your local machine for development and testing purposes.
 
+## Tree 
+```
+JobPortal/
+├── jobportal/
+├── accounts/
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
+
 ### Prerequisites
 
 - Python (3.6, 3.7, 3.8, or 3.9)
