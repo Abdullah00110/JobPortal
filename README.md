@@ -55,8 +55,8 @@ JobPortal/
 4. Set up the Django project:
 
     ```bash
-    django-admin startproject jobportal
-    cd jobportal
+    django-admin startproject JobPortal
+    cd JobPortal
     python manage.py startapp accounts
     ```
 
