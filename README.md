@@ -18,7 +18,7 @@ These instructions will help you set up the project on your local machine for de
 ## Tree 
 ```
 JobPortal/
-├── jobportal/
+├── JobPortal/
 ├── accounts/
 ├── LICENSE
 ├── README.md
