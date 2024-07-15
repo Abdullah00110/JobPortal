@@ -57,10 +57,12 @@ These instructions will help you set up the project on your local machine for de
     python manage.py migrate
     python manage.py runserver
     ```
-6. `requirements.txt`
+6. requirements.txt
+   ```
     Django>=3.2,<4.0
     djangorestframework
     djangorestframework-simplejwt
+   ```
 
 7. Open your web browser and go to `http://127.0.0.1:8000/` to see the application in action.
 
