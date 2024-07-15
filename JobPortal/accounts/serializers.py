@@ -123,3 +123,22 @@ class SkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserSkills
         fields = "__all__"
+
+class ProjectSerializer(serializers.ModelSeializer):
+    class Meta:
+        model = Project
+        fields = ["id", "title", "role", "description"]
+        
+    def create(self, validated_data):
+        user = self.context.get("user")
+        project = Project.objects.create(user=user, **validated_data)
+        return project
+    
+class ExperienceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Experience
+        fields = ["id", "job_role", "experience_year", "company", "start_date", "end_date"]
+    def create(self, validated_data):
+        user = self.context.get("user")
+        experience = Experience.objects.create(user=user, **validated_data)
+        return experience

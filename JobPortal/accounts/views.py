@@ -154,3 +154,31 @@ class AddSkill(APIView) :
                         )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+class AddProject(APIView):
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
+        serializer = ProjectSerializer(data=request.data, context={"user": request.user})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(
+                {
+                    "MESSAGE" : "PROJECT DETAILS ADDED SUCCESSFULLY"
+                }
+                status = status.HTTP_200_OK
+            )
+        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
+class AddExperience(APIView):
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
+        serializer = ExperienceSerializer(data=request.data, context={"user" : request.user})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(
+                {
+                    "MESSAGE" : "EXPERIENCE DETAILS ADDED SUCCESSFULLY"
+                },
+                status = status.HTTP_200_OK
+            )
+        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
