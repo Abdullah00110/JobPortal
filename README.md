@@ -5,8 +5,6 @@ This project is a Job Portal application developed using Django. It allows users
 ## Features
 
 - Token-based user registration and authentication
-- Job search functionality
-- Job posting for employers
 - Application management
 - User profile management, including education, skills, projects, and experience
 - Completely API-based functionality, tested using Postman
