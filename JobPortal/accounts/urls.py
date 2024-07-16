@@ -9,7 +9,7 @@ urlpatterns = [
     path("reset-password/<uid>/<token>", ResetPassword.as_view(), name="reset-password"),
     path("add-education/", AddEducation.as_view(), name="add-education"),
     path("add-skill/", AddSkill.as_view(), name="add-skill"),
-    path("add-project", AddProject.as_view(), name="add-project"),
-    path("add-experience", AddExperience.as_view(), name="add-experience")
+    path("add-project/", AddProject.as_view(), name="add-project"),
+    path("add-experience/", AddExperience.as_view(), name="add-experience")
 ]
 
