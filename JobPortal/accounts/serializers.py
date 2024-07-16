@@ -124,7 +124,7 @@ class SkillSerializer(serializers.ModelSerializer):
         model = UserSkills
         fields = "__all__"
 
-class ProjectSerializer(serializers.ModelSeializer):
+class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ["id", "title", "role", "description"]

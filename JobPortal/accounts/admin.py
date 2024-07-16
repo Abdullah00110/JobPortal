@@ -45,10 +45,12 @@ class EducationAdmin(admin.ModelAdmin):
         return obj.user.name if obj.user.name else ''
     
 @admin.register(UserSkills)
-class SkillAdmin(admin.ModelAdmin):
-    list_display = ["skill", "username", "user_id"]
+class SkillAdmin(admin.ModelAdmin) :
+    list_display = ["skill", "user_name", "user_id"]
+    def user_name(self, obj):
+        return obj.user.name if obj.user.name else ''
     def user_id(self, obj):
-        return obj.user.id if obj.user.name else ''
+        return obj.user.id if obj.user.id else ''
     
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
@@ -57,7 +59,7 @@ class ProjectAdmin(admin.ModelAdmin):
         return obj.user.name if obj.user.name else ''
 
 @admin.register(Experience)
-class ExperienceAdmin(model.ModelAdmin):
+class ExperienceAdmin(admin.ModelAdmin):
     list_display = ["user_name", "job_role", "experience_year", "company"]
     def user_name(self, obj):
         return obj.user.name if obj.user.name else ''
