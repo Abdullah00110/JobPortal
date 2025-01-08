@@ -100,9 +100,9 @@ Use the received token to perform the following actions:
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes or improvements.
+Contributions are welcome! Please open an issue or submit a pull request for any changes or improvements...
 
 ## Contact
 
-If you have any questions or feedback, please contact me at [abdullahsunasara6@gmail.com].
+If you have any questions or feedback, please get in touch with me at [abdullahsunasara6@gmail.com].
 
