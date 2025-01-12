@@ -104,5 +104,5 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## Contact
 
-If you have any questions or feedback, please get in touch with me at [abdullahsunasara6@gmail.com].
+If you have any questions or feedback, please contact me at [abdullahsunasara6@gmail.com].
 
