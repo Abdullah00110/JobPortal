@@ -40,6 +40,7 @@ JobPortal/
 2. Create a virtual environment and activate it:
 
     ```bash
+    This is virtual enviroment
     python -m venv env
     source env/bin/activate  # On Windows, use `env\Scripts\activate`
     ```
